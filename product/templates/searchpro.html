@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Search Product</title>
+</head>
+<body>
+<form method='POST'>
+  {% csrf_token %}
+  <input type="text" placeholder="enter porduct id" name="id">
+  <button type="submit">Search</button>
+</form>
+
+<br>
+<br>
+{% if prod_data %}
+<caption>Product List:</caption>
+<table border="1">
+  <tr>
+    <th>Product Id</th>
+    <th>Product Name</th>
+    <th>Price</th>
+    <th>stock</th>
+    <th>category</th>
+    <th>description</th>
+    <th>rating</th>
+  </tr>
+  <tr>
+    <td>{{ prod_data.id }}</td>
+    <td>{{ prod_data.name }}</td>
+    <td>{{ prod_data.price }}</td>
+    <td>{{ prod_data.stock }}</td>
+    <td>{{ prod_data.category }}</td>
+    <td>{{ prod_data.description }}</td>
+    <td>{{ prod_data.rating }}</td>
+  </tr>
+{% endif %}
+</table>
+</body>
+</html>

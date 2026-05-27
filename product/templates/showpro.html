@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Product Page</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+</head>
+<body>
+<div class="row row-cols-1 row-cols-sm-3 g-2">
+    {% for data in products %}
+  <div class="col">
+    <div class="card">
+      <img src="data:image/png;base64,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" class="card-img-top" alt="...">
+      <div class="card-body">
+        <h5 class="card-title"><b>{{ data.name }}</b></h5>
+        <pre class="card-text"><b>Id</b>: {{ data.id }}
+<b>Price</b>: {{ data.price }}
+<b>Stock</b>: {{ data.stock }}
+<b>Category</b>: {{ data.category }}
+<b>Rating</b>: {{ data.rating }}</pre>
+        <p class="card-text"><b>Description</b>: {{ data.description }}</p>
+          <div class="d-flex gap-3">
+        <form action="http://127.0.0.1:8000/add_cart/{{ data.id }}" method="POST">
+            {% csrf_token %}
+          <button type="submit" class="btn btn-primary btn-sm">Add to Cart</button>
+        </form>
+          <form action="http://127.0.0.1:8000/del_product/{{ data.id }}" method="POST">
+            {% csrf_token %}
+          <button type="submit" class="btn btn-primary btn-sm">Delete item</button>
+        </form>
+              <form action="http://127.0.0.1:8000/edit_product/{{ data.id }}" method="POST">
+            {% csrf_token %}
+          <button type="submit" class="btn btn-primary btn-sm">Update item</button>
+              </form>
+          </div>
+      </div>
+    </div>
+  </div>
+    {% endfor %}
+</div>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+</body>
+</html>
